@@ -23,8 +23,12 @@ import {
 import CIcon from '@coreui/icons-react'
 
 import avatar8 from './../../assets/images/avatars/8.jpg'
+import history from '../../history'
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
+import {Navigate} from "react-router-dom";
 
-const AppHeaderDropdown = () => {
+const AppHeaderDropdown = ({loginStatus,logout}) => {
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
@@ -37,8 +41,11 @@ const AppHeaderDropdown = () => {
           <CIcon icon={cilUser} className="me-2" />
           Profile
         </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilLockLocked} className="me-2" />
+        <CDropdownItem href="#" onClick={(event) => {
+          event.preventDefault()
+          logout()
+        }}>
+          <CIcon icon={cilLockLocked} className="me-2"  />
           Sign-off
         </CDropdownItem>
       </CDropdownMenu>
@@ -46,4 +53,29 @@ const AppHeaderDropdown = () => {
   )
 }
 
-export default AppHeaderDropdown
+function logoutActionCreator(){
+  return async function(dispatch, getState){
+    dispatch({type: 'LOGOUT'})
+    history.push("/#/login")
+    window.location.reload()
+  }
+}
+
+AppHeaderDropdown.propTypes = {
+  logout : PropTypes.func,
+  loginStatus : PropTypes.bool
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout : () => {dispatch(logoutActionCreator())}
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    loginStatus : state.IS_LOGGED_IN
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppHeaderDropdown)

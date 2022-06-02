@@ -1,8 +1,8 @@
 import React from 'react'
 import EmptyView from "./views/app-views/EmptyView";
 
-const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
-const Login = React.lazy(() => import('./views/pages/login/Login'))
+const Dashboard = React.lazy(() => import('./features/dashboard/Dashboard'))
+const Login = React.lazy(() => import('./features/login/Login'))
 const HL7Summary = React.lazy(() => import('./views/reports/Hl7SummaryReport'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
