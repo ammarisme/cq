@@ -12,7 +12,7 @@ import {
   cilSpeedometer,
   cilStar,
 } from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import {CNavGroup, CNavItem, CNavTitle} from '@coreui/react'
 
 const _nav = [
   // {
@@ -31,77 +31,52 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Insurance/Client Bills',
+    name: 'My Bills',
     to: '/claims',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon"/>,
     items: [
       {
         component: CNavItem,
-        name: 'Bulk billing',
+        name: 'Bulk uploads',
         to: '/claims/bulk-billing-csv',
       },
       {
         component: CNavItem,
-        name: 'Bulk void',
-        to: '/claims/bulk-voiding-csv',
-      },
-      {
-        component: CNavItem,
-        name: 'Bulk approve',
-        to: '/claims/bulk-approve',
-      },
-      {
-        component: CNavItem,
-        name: 'Bulk write-off',
-        to: '/claims/bulk-writeoff',
-      },
+        name: 'Recieved',
+        to: '/claims/claim-review/received',
+      }
     ],
   },
   {
     component: CNavGroup,
     name: 'Configuration',
     to: '/claims',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon"/>,
     items: [
       {
         component: CNavItem,
-        name: 'HL7 tester',
-        to: '/configuration/hl7-tester',
-      },
-      {
-        component: CNavItem,
-        name: 'Insurance Carriers',
+        name: 'Carriers',
         to: '/configuration/insurance-carriers',
       },
       {
         component: CNavItem,
-        name: 'Referring providers',
+        name: 'Providers',
         to: '/configuration/referring-providers',
       },
       {
         component: CNavItem,
-        name: 'Processing rules',
+        name: 'Rules',
         to: '/configuration/processing-rules',
-      },
-      {
-        component: CNavItem,
-        name: 'Correction rules',
-        to: '/configuration/correction-rules',
-      },
-      {
-        component: CNavItem,
-        name: 'Rejection rules',
-        to: '/configuration/rejection-rules',
-      },
-      {
-        component: CNavItem,
-        name: 'Templates',
-        to: '/configuration/templates',
       },
       {
         component: CNavItem,
         name: 'My Team',
         to: '/configuration/my-team',
+      },
+      {
+        component: CNavItem,
+        name: 'HL7 test tool',
+        to: '/configuration/hl7-tester',
       },
     ],
   },
@@ -113,7 +88,7 @@ const _nav = [
     component: CNavGroup,
     name: 'Analytcs',
     to: '/claims',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon"/>,
     items: [
       {
         component: CNavItem,
@@ -138,15 +113,19 @@ const _nav = [
     ],
   },
   {
+    component: CNavTitle,
+    name: 'Tools',
+  },
+  {
     component: CNavGroup,
-    name: 'Reports',
-    to: '/reports',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    name: 'Tools',
+    to: '/tools',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon"/>,
     items: [
       {
         component: CNavItem,
-        name: 'HL7 summary',
-        to: '/reports/received-claims-summary',
+        name: 'HL7 test tool',
+        to: '/tools/hl7-test-tool',
       },
     ],
   },

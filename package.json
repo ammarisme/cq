@@ -1,7 +1,7 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "My Product",
   "version": "4.3.1",
-  "description": "CoreUI Free React Admin Template",
+  "description": "My Product",
   "homepage": ".",
   "bugs": {
     "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
@@ -50,6 +50,7 @@
     "react-router-dom": "^6.3.0",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^5.0.1",
+    "react-select-search": "^3.0.9",
     "redux": "4.2.0",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",

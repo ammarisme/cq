@@ -116,7 +116,6 @@ export function loginThunkActionCreator(dispatch){
     console.log('can call an api here')
     await dispatch({type:'LOGGED_IN'})
     history.push('/#/dashboard')
-    console.log(getState())
   }
 }
 

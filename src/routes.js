@@ -1,9 +1,13 @@
 import React from 'react'
 import EmptyView from "./views/app-views/EmptyView";
+import ClaimReview from "./features/claim-review/ClaimReview";
+import RuleBoxes from "./features/rules-engine/RuleBoxes";
+import Recieved from "./features/claim-review/Recieved";
+import RecievedClaims from "./features/claim-review/Recieved";
 
 const Dashboard = React.lazy(() => import('./features/dashboard/Dashboard'))
 const Login = React.lazy(() => import('./features/login/Login'))
-const HL7Summary = React.lazy(() => import('./views/reports/Hl7SummaryReport'))
+const HL7Summary = React.lazy(() => import('./features/reports/Hl7SummaryReport'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 
@@ -74,6 +78,15 @@ const routes = [
   { path: '/analytics/payments', name: 'templates', element: EmptyView },
   { path: '/analytics/denials', name: 'my-team', element: EmptyView },
   { path: '/reports/received-claims-summary', name: 'received-claims-summary', element: HL7Summary, exact: true },
+
+  // Claim Review
+  { path: '/claims/claim-review/:id', name: 'claim-review', element: ClaimReview, exact: true },
+  { path: '/claims/claim-review/received', name: 'claim-review-received', element: RecievedClaims, exact: true },
+
+  // Rules Engine
+  { path: '/rules-engine/rule-boxes', name: 'rule-boxes', element: RuleBoxes, exact: true },
+
+
   { path: '/login', name: 'login', element: Login },
 ]
 
